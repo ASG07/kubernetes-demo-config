@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubernetes-demo
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ASG07/kubernetes-demo-config.git
+    targetRevision: main
+    path: k8s-simple
+  destination:
+    server: https://kubernetes.default.svc
