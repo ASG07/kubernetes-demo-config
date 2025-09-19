@@ -15,7 +15,7 @@ spec:
     spec:
       initContainers:
       - name: migration
-        image: your-dockerhub-username/laravel-app:latest  # Change 'your-dockerhub-username' to your Docker Hub username
+        image: your-dockerhub-username/laravel-app:v2  # Change 'your-dockerhub-username' to your Docker Hub username
         command: ['php', 'artisan', 'migrate', '--force']
         envFrom:
         - configMapRef:
@@ -24,7 +24,7 @@ spec:
             name: laravel-secret
       containers:
       - name: laravel
-        image: your-dockerhub-username/laravel-app:latest  # Change 'your-dockerhub-username' to your Docker Hub username
+        image: your-dockerhub-username/laravel-app:v2  # Change 'your-dockerhub-username' to your Docker Hub username
         ports:
         - containerPort: 80
         envFrom:
