@@ -7,7 +7,16 @@ spec:
   project: default
   source:
     repoURL: https://github.com/ASG07/kubernetes-demo-config.git
-    targetRevision: main
+    targetRevision: master
     path: k8s-simple
   destination:
     server: https://kubernetes.default.svc
+    namespace: myapp
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      prune: true
+      selfHeal: true
