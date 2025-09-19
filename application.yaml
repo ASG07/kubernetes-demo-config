@@ -11,7 +11,7 @@ spec:
     path: k8s-simple
   destination:
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: laravel
 
   syncPolicy:
     syncOptions:
