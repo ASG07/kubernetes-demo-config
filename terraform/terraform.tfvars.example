@@ -1,0 +1,40 @@
+# =============================================================================
+# TERRAFORM VARIABLES EXAMPLE
+# Copy this file to terraform.tfvars and fill in your values
+# =============================================================================
+
+# GCP Configuration
+project_id = "your-gcp-project-id"
+region     = "us-central1"
+
+# Cluster Configuration
+cluster_name = "laravel-production"
+environment  = "prod"
+
+# Node Configuration
+node_machine_type = "e2-standard-4"
+min_nodes         = 2
+max_nodes         = 10
+enable_spot_nodes = true
+
+# Database Configuration
+mysql_tier      = "db-n1-standard-2"
+mysql_disk_size = 50
+
+# Redis Configuration
+redis_memory_size = 2
+
+# Security Configuration
+enable_deletion_protection = true
+
+# Network Security - Replace with your actual IP ranges
+authorized_networks = [
+  {
+    cidr_block   = "203.0.113.0/24"  # Your office IP range
+    display_name = "Office"
+  },
+  {
+    cidr_block   = "198.51.100.0/24"  # Your VPN IP range
+    display_name = "VPN"
+  }
+]
